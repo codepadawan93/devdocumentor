@@ -1,0 +1,21 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Vendor frontend css
+@import '../css/animate.css';
+@import '../css/bootstrap-theme.min.css';
+@import '../css/custom.css';
+@import '../css/prettyPhoto.css';
+@import '../css/stroke.css';
+@import '../css/style.css';
+
+.docs-sidebar {
+  top: 32px;
+}
