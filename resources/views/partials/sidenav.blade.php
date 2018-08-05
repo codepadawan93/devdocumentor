@@ -2,7 +2,10 @@
 <div class="col-md-3">
     <nav class="docs-sidebar" data-spy="affix" data-offset-top="300" data-offset-bottom="200" role="navigation">
         <ul class="nav">
-            <li><a href="#line1">Getting Started</a></li>
+            @foreach ($sections as $section)
+                <li><a href="#section_{{$section->id}}">{{$section->name}}</a></li>
+            @endforeach
+            {{-- <li><a href="#line1">Getting Started</a></li>
             <li><a href="#line2">How to Install WordPress</a></li>
             <li><a href="#line3">How to Install Theme</a></li>
             <li><a href="#line4">Necessary Plugins</a></li>
@@ -22,7 +25,7 @@
             <li><a href="#line8">Support Desk</a></li>
             <li><a href="#line9">Files & Sources</a></li>
             <li><a href="#line10">Version History (Changelog)</a></li>
-            <li><a href="#line11">Copyright and license</a></li>
+            <li><a href="#line11">Copyright and license</a></li> --}}
         </ul>
     </nav >
 </div>

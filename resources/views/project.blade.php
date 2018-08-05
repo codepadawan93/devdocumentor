@@ -5,14 +5,16 @@
     @include('partials.sidenav')
 
     <div class="col-md-9">
+
         <section class="welcome">
 
             <div class="row">
                 <div class="col-md-12 left-align">
-                    <h2 class="dark-text">Introduction<hr></h2>
+                <h2 class="dark-text">{{$currentProject->name}}<hr></h2>
                     <div class="row">
 
                         <div class="col-md-12 full">
+                            
                             <div class="intro1">
                                 <ul>
                                     <li><strong>Item Name : </strong>Gather Responsive Event Template</li>
@@ -25,26 +27,9 @@
 
                             <hr>
                             <div>
-                                <p>First of all, Thank you so much for purchasing this template and for being my loyal customer.
-                                    <strong>You are awesome!</strong>
-                                    <br> You are entitled to get free lifetime updates to this product + exceptional support from the author directly.
+                                <p>
+                                {{$currentProject->subtitle}}
                                 </p>
-
-                                <p>This documentation is to help you regarding each step of customization. Please go through the documentation carefully to understand how this template is made and how to edit this properly. Basic HTML and CSS knowledge is required to customize this template. You may learn basics <a href="http://www.w3schools.com/" target="_blank">here</a>, <a href="https://developer.mozilla.org/" target="_blank">here</a> and <a href="http://learn.shayhowe.com/html-css/building-your-first-web-page/" target="_blank">here</a>. </p>
-
-                                <h4>Requirements</h4>
-                                <p>You will need the following sofwares to customize this template.</p>
-                                <ol>
-                                    <li>Code Editing Software (eg: Dreamweaver, Sublime Text or Notepad)</li>
-                                    <li>Web Browser for testing (eg: Google Chrome or Mozilla Firefox)</li>
-                                    <li>FTP Tool to upload files to Server (eg: <a href="https://filezilla-project.org/download.php?type=client" target="_blank">FileZilla</a>) </li>
-                                </ol>
-                                <div class="intro2 clearfix">
-                                    <p><i class="fa fa-exclamation-triangle"></i> Be careful while editing the template. If not edited properly, the design layout may break completely.
-                                        <br> No support is provided for faulty customization.
-                                    </p>
-                                </div>
-
                             </div>
                         </div>
 
@@ -54,7 +39,74 @@
             </div>
         </section>
 
-        <section id="line1" class="section">
+        @foreach ($sections as $section)
+        <section id="section_{{$section->id}}" class="section">
+
+                <div class="row">
+                    <div class="col-md-12 left-align">
+                        <h2 class="dark-text">{{$section->name}} <a href="#top">#back to top</a><hr></h2>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+    
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>{{$section->subtitle}}</p>
+    
+                        <h4>Bootstrap Grid System</h4>
+    
+                        <pre class="brush: html; highlight: [2,4]">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                YOUR CODES GOES HERE
+                            </div>
+                        </div>
+                    </div></pre>
+    
+                        <p>Our you can use the grid system with 2 columns like this;</p>
+    
+                        <pre class="brush: html">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                YOUR CODES GOES HERE
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                YOUR CODES GOES HERE
+                            </div>
+                        </div>
+                    </div>
+                    </pre>
+    
+                        <p>Our you can use the grid system with 3 columns like this;</p>
+    
+                        <pre class="brush: html">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                                YOUR CODES GOES HERE
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                                YOUR CODES GOES HERE
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                                YOUR CODES GOES HERE
+                            </div>
+                        </div>
+                    </div>
+                    </pre>
+                    </div>
+                    <!-- end col -->
+                </div>
+                <!-- end row -->
+    
+            </section>
+            <!-- end section -->
+        @endforeach
+        
+        {{-- <section id="line1" class="section">
 
             <div class="row">
                 <div class="col-md-12 left-align">
@@ -663,7 +715,7 @@
             <!-- end row -->
 
         </section>
-        <!-- end section -->
+        <!-- end section --> --}}
     </div>
     <!-- // end .col -->
 

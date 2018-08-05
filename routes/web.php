@@ -11,11 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('main');
-});
-
-
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+
+Route::get('/', 'ProjectController@index');
+Route::get('/{slug}', 'ProjectController@index');

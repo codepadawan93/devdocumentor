@@ -13706,6 +13706,14 @@ module.exports = __webpack_require__(36);
 // require('./bootstrap');
 __webpack_require__(12);
 
+// lazy load images from voyager
+if (typeof jQuery !== 'undefined') {
+    jQuery('img[data-src]').each(function (i, img) {
+        var parsed = JSON.parse(img.dataset.src);
+        img.src = 'storage/' + (parsed[0].download_link || 'projects/default-project.jpg');
+    });
+}
+
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
