@@ -19,24 +19,24 @@
                 Projects
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    @foreach ($projects as $i => $project)
+                    @foreach ($menuProjects as $i => $project)
                         <a class="dropdown-item" data-key={{$i}} href="{{url($project->slug)}}">{{$project->name}}</a>
                     @endforeach
                 </div>
             </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+            <form class="form-inline my-2 my-lg-0" action="{{url('/')}}">
+                <input class="form-control mr-sm-2" name="s" type="search" placeholder="Search" aria-label="Search" value="{{$s}}">
+                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
             </form>
             @if($user)
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{url('admin')}}">Administrate</a>
-                        {{-- <a class="dropdown-item" href="{{url('admin/logout')}}">Log out</a> --}}
                         <form action="{{url('admin/logout')}}" method="POST">
                             @csrf
                             <button type="submit" class="dropdown-item">
@@ -47,7 +47,7 @@
                 </li>
             </ul>
             @else
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{{url('admin')}}">Log in</a>
                 </li>       

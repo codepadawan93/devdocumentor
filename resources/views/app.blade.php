@@ -41,14 +41,14 @@
         <div class="container">
 
             @include('partials.navbar')
-
+            <div class="spacer"></div>
             <section id="top" class="section docs-heading">
                 
                 <div class="row">
                     <div class="col-md-12">
                         <div class="big-title text-center">
-                            <h1>Your ThemeForest item Name</h1>
-                            <p class="lead">Your awesome theme / template documentation version 1.0</p>
+                            <h1>{{setting('site.title')}}</h1>
+                        <p class="lead">{{setting('site.description')}}</p>
                         </div>
                         <!-- end title -->
                     </div>
